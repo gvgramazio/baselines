@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 for seed in $(seq 0 2); do
-  OPENAI_LOG_FORMAT=csv,log,stdout
-  OPENAI_LOGDIR=$HOME/logs/foosball-ppo-hp/b512-$seed
+  OPENAI_LOG_FORMAT=csv,log,stdout \
+  OPENAI_LOGDIR=logs/foosball-ppo-hp/b512-$seed \
   nohup ./xvfb-run-safe -s "-screen 0 800x600x24" python3 -m baselines.run \
     --alg=ppo2 \
     --env=Foosball_sp-v0 \
@@ -18,8 +18,8 @@ for seed in $(seq 0 2); do
 done
 
 for seed in $(seq 0 2); do
-  OPENAI_LOG_FORMAT=csv,log,stdout
-  OPENAI_LOGDIR=$HOME/logs/foosball-ppo-hp/b1024-$seed
+  OPENAI_LOG_FORMAT=csv,log,stdout \
+  OPENAI_LOGDIR=logs/foosball-ppo-hp/b1024-$seed \
   nohup ./xvfb-run-safe -s "-screen 0 800x600x24" python3 -m baselines.run \
     --alg=ppo2 \
     --env=Foosball_sp-v0 \
