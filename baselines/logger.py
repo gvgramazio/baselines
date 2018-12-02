@@ -223,7 +223,7 @@ def getkvs():
     return Logger.CURRENT.name2val
 
 
-def log(*args, level=INFO):
+def log(*args, level=DEBUG):
     """
     Write the sequence of args, with no separators, to the console and output files (if you've configured an output file).
     """
@@ -297,7 +297,7 @@ class Logger(object):
     def __init__(self, dir, output_formats):
         self.name2val = defaultdict(float)  # values this iteration
         self.name2cnt = defaultdict(int)
-        self.level = INFO
+        self.level = DEBUG
         self.dir = dir
         self.output_formats = output_formats
 
